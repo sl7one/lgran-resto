@@ -1,32 +1,14 @@
-const sizes = {
-   s: '18px',
-   m: '24px',
-};
-
 const transition = (option) => `${option} 350ms ease-in-out`;
 
-export const themeDark = {
+export const theme = {
    colors: {
-      mainBlackBg: '#0e1111',
-      mainWhiteBg: '#F9F9F9',
+      mainBlackBg: '#262624',
+      mainGrayBg: '#383837',
       mainAccent: 'orange',
-      mainWhiteText: '#FFF',
-      mainBlackText: '#0e1111',
-      lamp: 'orange',
+      mainGrayText: 'e7e7e7',
+      mainWhiteText: '#fff',
+      // lamp: 'orange',
    },
-   sizes,
-   transition,
-};
 
-export const themeLight = {
-   colors: {
-      mainBlackBg: '#F9F9F9',
-      mainWhiteBg: '#0e1111',
-      mainAccent: '#0652ff',
-      mainWhiteText: '#0e1111',
-      mainBlackText: '#F9F9F9',
-      lamp: '#0652ff',
-   },
-   sizes,
    transition,
 };
