@@ -224,3 +224,15 @@ export const FoodQualityBox = styled.div`
       left: 7%;
    }
 `;
+export const GalleryBox = styled.div`
+   div[title='gallery'] {
+      width: 100%;
+      padding: 50px;
+      /* display: flex;
+      justify-content: center; */
+
+      img {
+         border: 3px solid ${({ theme }) => theme.colors.mainAccent};
+      }
+   }
+`;
