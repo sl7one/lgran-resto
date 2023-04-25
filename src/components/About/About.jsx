@@ -1,23 +1,11 @@
-import shape from '../../assets/img/Shape.png';
 import plate from '../../assets/img/about/about.png';
 import { AboutBox } from '../../styles/styled';
+import { SectionTitle } from '../SictionTitle/SectionTitle';
 
 export const About = () => {
    return (
       <AboutBox>
-         <div id="wrapper">
-            <img
-               src={shape}
-               alt="shape"
-            />
-            <div>
-               <h2>About </h2>
-            </div>
-            <img
-               src={shape}
-               alt="shape"
-            />
-         </div>
+         <SectionTitle title="about" />
          <p text="about">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices

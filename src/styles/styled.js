@@ -119,6 +119,21 @@ export const HeroBox = styled.div`
       width: 185px;
    }
 `;
+export const ShapeImg = styled.img`
+   width: 65px;
+`;
+export const SectionTitleBox = styled.div`
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 110px;
+   gap: 50px;
+
+   h2 {
+      text-transform: uppercase;
+      font-size: 55px;
+   }
+`;
 export const AboutBox = styled.div`
    background-image: url(${bgGrayTexture});
    background-repeat: no-repeat;
@@ -127,10 +142,6 @@ export const AboutBox = styled.div`
    padding-top: 80px;
    padding-bottom: 80px;
    padding-left: 110px;
-
-   h2 {
-      font-size: 65px;
-   }
 
    p[text='about'] {
       width: 580px;
@@ -157,16 +168,59 @@ export const AboutBox = styled.div`
       right: 0;
    }
 
-   img[alt='shape'] {
-      width: 65px;
+   ${SectionTitleBox} {
+      width: 580px;
+   }
+`;
+export const FoodQualityBox = styled.div`
+   background-image: url(${bgBlackTexture});
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+
+   padding-right: 110px;
+   padding-bottom: 110px;
+   position: relative;
+
+   ${SectionTitleBox} {
+      width: 800px;
+      margin-top: 300px;
    }
 
-   #wrapper {
-      display: flex;
-      width: 580px;
-      justify-content: center;
-      align-items: center;
-      margin-top: 110px;
-      gap: 50px;
+   p[title='text'] {
+      width: 800px;
+      text-align: center;
+      margin-top: 90px;
+   }
+
+   p[title='seo'] {
+      width: 800px;
+      font-size: 50px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 90px;
+
+      span {
+         display: block;
+      }
+      span:nth-of-type(2) {
+         font-size: 38px;
+         margin-top: 10px;
+      }
+      span:nth-of-type(3) {
+         font-size: 30px;
+         color: ${({ theme }) => theme.colors.mainAccent};
+         margin-top: 10px;
+      }
+   }
+
+   img[alt='plate With Honey'] {
+      width: 650px;
+      position: absolute;
+      top: 0;
+      left: 7%;
    }
 `;
