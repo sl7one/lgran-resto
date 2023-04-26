@@ -9,6 +9,7 @@ body {
    letter-spacing: 2px;
    line-height: 1.15;
    background-color: black;
+   overflow-x: hidden;
 }
 
 code {

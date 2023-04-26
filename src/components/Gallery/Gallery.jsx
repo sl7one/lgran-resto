@@ -11,13 +11,13 @@ import { GalleryBox } from '../../styles/styled';
 import { SectionTitle } from '../SictionTitle/SectionTitle';
 
 const images = [
-   { src: photo1, width: 4, height: 5 },
-   { src: photo2, width: 3, height: 4 },
-   { src: photo3, width: 4, height: 3 },
-   { src: photo4, width: 4, height: 3 },
-   { src: photo5, width: 4, height: 5 },
-   { src: photo7, width: 4, height: 5 },
-   { src: photo6, width: 4, height: 3 },
+   { src: photo1, width: 3, height: 3 },
+   { src: photo2, width: 2, height: 3 },
+   { src: photo3, width: 3, height: 2 },
+   { src: photo4, width: 3, height: 2 },
+   { src: photo5, width: 3, height: 3 },
+   { src: photo7, width: 2, height: 2 },
+   { src: photo6, width: 3, height: 2 },
 ];
 
 export const GalleryComponent = () => {
@@ -28,7 +28,7 @@ export const GalleryComponent = () => {
             <Gallery
                photos={images}
                direction={'column'}
-               margin={15}
+               margin={10}
                columns={3}
             />
          </div>

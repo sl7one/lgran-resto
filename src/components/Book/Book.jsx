@@ -6,6 +6,7 @@ import bookImg from '../../assets/img/book/book.png';
 
 import Select from 'react-select';
 import { CustomDropDownIndicator } from '../CustomDropDownIndicator/CustomDropDownIndicator';
+import { mouseEnter, mouseLeave } from '../../gsap/utils';
 
 const options = [
    { value: 2, label: '2 Persons' },
@@ -91,6 +92,14 @@ export const Book = () => {
          border: 'none',
       }),
    };
+
+   const onMouseEnter = ({ currentTarget }) => {
+      mouseEnter(currentTarget);
+   };
+
+   const onMouseLeave = ({ currentTarget }) => {
+      mouseLeave(currentTarget);
+   };
    return (
       <BookBox>
          <SectionTitle title="book now" />
@@ -147,7 +156,13 @@ export const Book = () => {
                </div> */}
             </div>
          </form>
-         <button type="submit">SUBMIT</button>
+         <button
+            type="submit"
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+         >
+            SUBMIT
+         </button>
 
          <img
             src={bookImg}

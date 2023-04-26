@@ -4,10 +4,19 @@ import f from '../../assets/img/socLinks/f.png';
 import i from '../../assets/img/socLinks/i.png';
 import p from '../../assets/img/socLinks/p.png';
 import t from '../../assets/img/socLinks/t.png';
+import { mouseEnter, mouseLeave } from '../../gsap/utils';
 
 const soc = [f, i, p, t];
 
 export const Footer = () => {
+   const onMouseEnter = ({ currentTarget }) => {
+      mouseEnter(currentTarget);
+   };
+
+   const onMouseLeave = ({ currentTarget }) => {
+      mouseLeave(currentTarget);
+   };
+
    return (
       <FooterBox>
          <img
@@ -15,12 +24,42 @@ export const Footer = () => {
             alt="лого"
          />
          <nav>
-            <p>ABOUT US</p>
-            <p>MENU</p>
-            <p>GALLERY</p>
-            <p>BOOKINGS</p>
-            <p>CONTACTS</p>
-            <p>BLOG</p>
+            <p
+               onMouseEnter={onMouseEnter}
+               onMouseLeave={onMouseLeave}
+            >
+               ABOUT US
+            </p>
+            <p
+               onMouseEnter={onMouseEnter}
+               onMouseLeave={onMouseLeave}
+            >
+               MENU
+            </p>
+            <p
+               onMouseEnter={onMouseEnter}
+               onMouseLeave={onMouseLeave}
+            >
+               GALLERY
+            </p>
+            <p
+               onMouseEnter={onMouseEnter}
+               onMouseLeave={onMouseLeave}
+            >
+               BOOKINGS
+            </p>
+            <p
+               onMouseEnter={onMouseEnter}
+               onMouseLeave={onMouseLeave}
+            >
+               CONTACTS
+            </p>
+            <p
+               onMouseEnter={onMouseEnter}
+               onMouseLeave={onMouseLeave}
+            >
+               BLOG
+            </p>
          </nav>
 
          <ul>
@@ -29,6 +68,8 @@ export const Footer = () => {
                   <img
                      src={el}
                      alt="pic"
+                     onMouseEnter={onMouseEnter}
+                     onMouseLeave={onMouseLeave}
                   />
                </li>
             ))}

@@ -126,7 +126,7 @@ export const SectionTitleBox = styled.div`
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-top: 110px;
+   /* margin-top: 110px; */
    gap: 50px;
 
    h2 {
@@ -139,7 +139,7 @@ export const AboutBox = styled.div`
    background-repeat: no-repeat;
    background-size: cover;
    position: relative;
-   padding-top: 80px;
+   padding-top: 160px;
    padding-bottom: 80px;
    padding-left: 110px;
 
@@ -176,6 +176,7 @@ export const FoodQualityBox = styled.div`
    background-image: url(${bgBlackTexture});
    background-repeat: no-repeat;
    background-size: cover;
+   overflow-y: hidden;
 
    display: flex;
    flex-direction: column;
@@ -184,10 +185,10 @@ export const FoodQualityBox = styled.div`
    padding-right: 110px;
    padding-bottom: 110px;
    position: relative;
+   padding-top: 300px;
 
    ${SectionTitleBox} {
       width: 800px;
-      margin-top: 300px;
    }
 
    p[title='text'] {
@@ -225,9 +226,11 @@ export const FoodQualityBox = styled.div`
    }
 `;
 export const GalleryBox = styled.div`
+   padding-top: 90px;
    div[title='gallery'] {
-      width: 100%;
+      width: 80%;
       padding: 50px;
+      margin: 0 auto;
 
       img {
          border: 3px solid ${({ theme }) => theme.colors.mainAccent};
