@@ -228,11 +228,170 @@ export const GalleryBox = styled.div`
    div[title='gallery'] {
       width: 100%;
       padding: 50px;
-      /* display: flex;
-      justify-content: center; */
 
       img {
          border: 3px solid ${({ theme }) => theme.colors.mainAccent};
       }
+   }
+`;
+export const BookBox = styled.div`
+   background-image: url(${bgBlackTexture});
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   padding-top: 110px;
+   padding-bottom: 110px;
+
+   div[id='left-block'] {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+   }
+
+   div[id='right-block'] {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+   }
+
+   h3 {
+      margin-top: 85px;
+      font-size: 35px;
+      text-align: center;
+   }
+
+   form {
+      display: flex;
+      justify-content: space-between;
+      width: 1100px;
+      margin: 0 auto;
+      margin-top: 90px;
+
+      label {
+         font-size: 20px;
+         display: block;
+         margin-bottom: 15px;
+      }
+
+      input {
+         font-size: 16px;
+         padding: 10px;
+         border: 2px solid ${({ theme }) => theme.colors.mainAccent};
+         border-radius: 10px;
+         color: white;
+         width: 420px;
+         letter-spacing: inherit;
+      }
+
+      svg {
+         fill: ${({ theme }) => theme.colors.mainAccent};
+      }
+   }
+
+   button {
+      margin: 90px auto;
+      color: ${({ theme }) => theme.colors.mainWhiteText};
+      background-color: ${({ theme }) => theme.colors.mainAccent};
+      padding: 15px;
+      width: 300px;
+      border-radius: 20px;
+   }
+`;
+export const NoteBox = styled.div`
+   background-image: url(${bgBlackTexture});
+   background-repeat: no-repeat;
+   background-size: cover;
+   overflow: hidden;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   padding-top: 60px;
+   padding-bottom: 60px;
+
+   position: relative;
+
+   span {
+      display: block;
+      font-size: 250px;
+      margin: 0 auto;
+      color: ${({ theme }) => theme.colors.mainAccent};
+   }
+
+   p {
+      width: 750px;
+      text-align: center;
+   }
+   p[title='author'] {
+      text-transform: uppercase;
+      color: ${({ theme }) => theme.colors.mainAccent};
+      font-size: 35px;
+      margin-top: 60px;
+   }
+
+   img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+   }
+`;
+export const EnjoyBox = styled.div`
+   background-image: url(${bgGrayTexture});
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   padding: 210px 0 210px 110px;
+
+   position: relative;
+
+   h2 {
+      font-size: 35px;
+      text-align: center;
+
+      width: 600px;
+      text-transform: uppercase;
+      color: ${({ theme }) => theme.colors.mainAccent};
+   }
+   p[title='text'] {
+      margin-top: 60px;
+      width: 600px;
+      text-align: center;
+   }
+   p[title='enjoy'] {
+      font-size: 35px;
+      text-align: center;
+      width: 600px;
+      text-transform: uppercase;
+      margin-top: 60px;
+      color: ${({ theme }) => theme.colors.mainAccent};
+   }
+   img {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+   }
+`;
+export const FooterBox = styled.div`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   padding: 110px;
+
+   border-top: 8px dotted ${({ theme }) => theme.colors.mainAccent};
+
+   nav {
+      display: flex;
+      gap: 20px;
+      margin-top: 90px;
+   }
+
+   ul {
+      display: flex;
+      gap: 50px;
+      margin-top: 90px;
    }
 `;
