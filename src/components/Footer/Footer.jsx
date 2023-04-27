@@ -16,20 +16,22 @@ export const Footer = () => {
    useEffect(() => {
       const ctx = gsap.context((self) => {
          //scroll-trigger
-         gsap.fromTo(
-            '[alt="logo"]',
-            { scale: 1.5 },
-            {
-               scale: 1,
-               scrollTrigger: {
-                  trigger: '[alt="logo"]',
-                  start: 'top center', //top элемента bottom вюпорта
-                  end: 'bottom +=600',
-                  // markers: true,
-                  scrub: 2,
-               },
-            }
-         );
+         setTimeout(() => {
+            gsap.fromTo(
+               self.selector('[alt="logo"]'),
+               { scale: 1.5 },
+               {
+                  scale: 1,
+                  scrollTrigger: {
+                     trigger: self.selector('[alt="logo"]'),
+                     start: 'top center', //top элемента bottom вюпорта
+                     end: 'bottom +=600',
+                     // markers: true,
+                     scrub: 2,
+                  },
+               }
+            );
+         }, 500);
       }, container);
       return () => ctx.revert();
    }, []);

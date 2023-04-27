@@ -9,38 +9,40 @@ export const Enjoy = () => {
    useEffect(() => {
       const ctx = gsap.context((self) => {
          //scroll-trigger
-         gsap.fromTo(
-            self.selector('[title="meta"]'),
-            { x: '100%', opacity: 0 },
-            {
-               x: 0,
-               opacity: 1,
-               scrollTrigger: {
-                  trigger: '[alt="enjoy"]',
-                  start: 'top center', //top элемента bottom вюпорта
-                  end: 'bottom center',
-                  // markers: true,
-                  scrub: 2,
-               },
-            }
-         );
-         gsap.fromTo(
-            self.selector('[alt="enjoy"]'),
-            { x: '-150%', opacity: 0, rotate: 180, y: 0 },
-            {
-               x: 0,
-               y: 0,
-               opacity: 1,
-               rotate: 0,
-               scrollTrigger: {
-                  trigger: '[alt="enjoy"]',
-                  start: 'top center', //top элемента bottom вюпорта
-                  end: 'bottom center',
-                  // markers: true,
-                  scrub: 2,
-               },
-            }
-         );
+         setTimeout(() => {
+            gsap.fromTo(
+               self.selector('[title="meta"]'),
+               { x: '100%', opacity: 0 },
+               {
+                  x: 0,
+                  opacity: 1,
+                  scrollTrigger: {
+                     trigger: '[alt="enjoy"]',
+                     start: 'top center', //top элемента bottom вюпорта
+                     end: 'bottom center',
+                     // markers: true,
+                     scrub: 2,
+                  },
+               }
+            );
+            gsap.fromTo(
+               self.selector('[alt="enjoy"]'),
+               { x: '-150%', opacity: 0, rotate: 180, y: 0 },
+               {
+                  x: 0,
+                  y: 0,
+                  opacity: 1,
+                  rotate: 0,
+                  scrollTrigger: {
+                     trigger: '[alt="enjoy"]',
+                     start: 'top center', //top элемента bottom вюпорта
+                     end: 'bottom center',
+                     // markers: true,
+                     scrub: 2,
+                  },
+               }
+            );
+         }, 500);
       }, container);
       return () => ctx.revert();
    }, []);

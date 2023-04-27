@@ -26,6 +26,7 @@ const images = [
 export const GalleryComponent = () => {
    const container = useRef(null);
    const titleRef = useRef(null);
+   const galleryContainer = useRef(null);
 
    useEffect(() => {
       const parent = document.querySelector(`[title="gallery"]`);
@@ -43,50 +44,49 @@ export const GalleryComponent = () => {
             });
             gsap.fromTo(
                gallery,
-               { y: 'random(-50,50,10, true)', x: 'random(-50,50,10, true)' },
+               { y: 'random(-200,200)', x: 'random(200,-200)' },
                {
                   y: 0,
                   x: 0,
                   scrollTrigger: {
-                     trigger: container.current,
-                     start: 'top 65%', //top элемента bottom вюпорта
-                     end: 'bottom bottom',
+                     trigger: galleryContainer.current,
+                     // start: 'top 65%',
+                     // end: 'bottom bottom',
+                     // markers: true,
+                     scrub: 2,
+                     stagger: 0.1,
+                  },
+               }
+            );
+            gsap.fromTo(
+               titleRef.current,
+               { opacity: 0, y: -100 },
+               {
+                  opacity: 1,
+                  y: 0,
+                  scrollTrigger: {
+                     trigger: titleRef.current,
+                     start: 'top center', //top элемента bottom вюпорта
+                     end: '300px center',
                      // markers: true,
                      scrub: 2,
                   },
-                  stagger: 0.1,
                }
             );
-         }, 100);
-
-         gsap.fromTo(
-            titleRef.current,
-            { opacity: 0, y: -100 },
-            {
-               opacity: 1,
-               y: 0,
-               scrollTrigger: {
-                  trigger: titleRef.current,
-                  start: 'top center', //top элемента bottom вюпорта
-                  end: '300px center',
-                  // markers: true,
-                  scrub: 2,
-               },
-            }
-         );
+         }, 500);
       }, container);
       return () => ctx.revert();
    }, []);
 
    return (
-      <GalleryBox>
+      <GalleryBox ref={container}>
          <div ref={titleRef}>
             <SectionTitle title="gallery" />
          </div>
 
          <div
             title="gallery"
-            ref={container}
+            ref={galleryContainer}
          >
             <Gallery
                photos={images}
