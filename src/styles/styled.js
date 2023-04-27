@@ -99,24 +99,28 @@ export const HeroBox = styled.div`
       top: 20%;
       left: 0;
       width: 380px;
+      opacity: 0;
    }
-   img[alt='big plate'] {
+   img[alt='bigPlate'] {
       position: absolute;
       top: 50%;
       left: 12%;
       width: 650px;
+      opacity: 0;
    }
    img[alt='rosemary'] {
       position: absolute;
       top: 30%;
       left: 25%;
       width: 135px;
+      opacity: 0;
    }
    img[alt='currant'] {
       position: absolute;
       top: 33%;
       left: 33%;
       width: 185px;
+      opacity: 0;
    }
 `;
 export const ShapeImg = styled.img`
@@ -161,7 +165,7 @@ export const AboutBox = styled.div`
       }
    }
 
-   img[alt='plate with waffles'] {
+   img[alt='plateWithWaffles'] {
       width: 750px;
       position: absolute;
       bottom: 0;
@@ -397,5 +401,27 @@ export const FooterBox = styled.div`
       display: flex;
       gap: 50px;
       margin-top: 90px;
+   }
+`;
+export const LoaderBox = styled.div`
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   [title='box'] {
+      width: 1000px;
+      height: 1000px;
+      background-color: gray;
+      border-radius: 50%;
+      font-size: 150px;
+      color: black;
+      font-weight: 700;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
    }
 `;

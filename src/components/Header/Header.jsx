@@ -14,19 +14,19 @@ export const Header = () => {
    const theme = useTheme();
 
    useEffect(() => {
-      const ctx = gsap.context(() => {
+      const ctx = gsap.context((self) => {
          gsap
             .timeline({ defaults: { duration: 2.5, ease: 'power3.out' } })
-            .fromTo(navLeft.current, { x: 30 }, { x: 0 })
-            .fromTo(navRight.current, { x: -30 }, { x: 0 }, '<')
+            .fromTo(self.selector(navLeft.current), { x: 30 }, { x: 0 })
+            .fromTo(self.selector(navRight.current), { x: -30 }, { x: 0 }, '<')
             .fromTo(
-               logoRef.current,
+               self.selector(logoRef.current),
                { opacity: 0, scale: 1.25 },
                { opacity: 1, scale: 1, ease: 'elastic.out(1, 0.25)', duration: 3.5 },
                '<'
             )
             .fromTo(
-               bgRef.current,
+               self.selector(bgRef.current),
                {
                   backgroundColor: 'transparent',
                },

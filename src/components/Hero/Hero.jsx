@@ -16,112 +16,114 @@ export const Hero = () => {
    const container = useRef();
 
    useEffect(() => {
-      const ctx = gsap.context(() => {
+      const ctx = gsap.context((self) => {
          gsap
             .timeline({
-               defaults: { duration: 2, ease: 'power3.out', delay: 0.7 },
+               defaults: { duration: 2, ease: 'power3.out' },
             })
             .fromTo(
-               '[alt="small plate"]',
+               self.selector('[alt="small plate"]'),
                { x: -400, opacity: 0, rotate: -90 },
                { x: 0, rotate: 0, opacity: 1 }
             )
             .fromTo(
-               '[alt="big plate"]',
+               self.selector('[alt="bigPlate"]'),
                { x: -400, opacity: 0, rotate: -90 },
                { x: 0, opacity: 1, rotate: 0 },
                '<-1'
             )
             .fromTo(
-               '[alt="rosemary"]',
+               self.selector('[alt="rosemary"]'),
                { opacity: 0, rotate: 45, scale: 1.25 },
                { opacity: 1, rotate: 0, scale: 1 },
                '<-1'
             )
             .fromTo(
-               '[alt="currant"]',
+               self.selector('[alt="currant"]'),
                { opacity: 0, rotate: -45, scale: 1.25 },
                { opacity: 1, rotate: 0, scale: 1 },
                '>-1.5'
             )
-            .fromTo('h2', { opacity: 0, y: -50 }, { opacity: 1, y: 0 }, '<')
             .fromTo(
-               '[link="LearnMore"]',
+               self.selector('h2'),
+               { opacity: 0, y: -50 },
+               { opacity: 1, y: 0 },
+               '<'
+            )
+            .fromTo(
+               self.selector('[link="LearnMore"]'),
                { opacity: 0, y: -50 },
                { opacity: 1, y: 0 },
                '<'
             );
 
          //scroll-trigger
+
          gsap.fromTo(
-            '[alt="logo"]',
+            self.selector('[alt="logo"]'),
             { y: -25, scale: 1 },
             {
                y: 0,
                scale: 1.25,
                scrollTrigger: {
-                  trigger: '[alt="logo"]',
+                  trigger: self.selector('[alt="logo"]'),
                   start: 'top bottom', //top элемента bottom вюпорта
                   // markers: true,
                   scrub: 2,
                },
             }
          );
-         gsap.to(
-            '[alt="small plate"]',
-
-            {
-               y: -100,
-               scrollTrigger: {
-                  trigger: '[alt="small plate"]',
-                  start: 'top 30%', //top элемента bottom вюпорта
-                  end: 'bottom center',
-                  // markers: true,
-                  scrub: 2,
-               },
-            }
-         );
+         gsap.to(self.selector('[alt="small plate"]'), {
+            y: -50,
+            scrollTrigger: {
+               trigger: self.selector('[alt="small plate"]'),
+               start: 'top 30%', //top элемента bottom вюпорта
+               end: 'bottom center',
+               // markers: true,
+               scrub: 2,
+            },
+         });
          gsap.fromTo(
-            '[alt="big plate"]',
-            { y: 0, x: 0 },
+            self.selector('[alt="bigPlate"]'),
+            { x: 0, y: 0 },
             {
                y: -100,
                x: -50,
                scrollTrigger: {
-                  trigger: '[alt="big plate"]',
-                  start: 'top 75%', //top элемента bottom вюпорта
-                  end: 'bottom bottom',
+                  trigger: self.selector('[alt="small plate"]'),
+                  start: 'top top', //top элемента bottom вюпорта
+                  end: 'bottom top',
                   // markers: true,
                   scrub: 2,
                },
             }
          );
-         gsap.to('[alt="rosemary"]', {
+         gsap.to(self.selector('[alt="rosemary"]'), {
             y: -75,
             x: 15,
             scrollTrigger: {
-               trigger: '[alt="rosemary"]',
+               trigger: self.selector('[alt="rosemary"]'),
                start: 'top 35%', //top элемента bottom вюпорта
                end: 'bottom end',
                // markers: true,
                scrub: 2,
             },
          });
-         gsap.to('[alt="currant"]', {
+         gsap.to(self.selector('[alt="currant"]'), {
             y: -55,
             x: 35,
             scrollTrigger: {
-               trigger: '[alt="currant"]',
+               trigger: self.selector('[alt="currant"]'),
                start: 'top 18%', //top элемента bottom вюпорта
                end: 'bottom end',
                // markers: true,
                scrub: 2,
             },
          });
-         gsap.to('[link="LearnMore"]', {
+         gsap.to(self.selector('[link="LearnMore"]'), {
             x: -50,
             scrollTrigger: {
-               trigger: '[link="LearnMore"]',
+               trigger: self.selector('[link="LearnMore"]'),
                start: 'top 45%', //top элемента bottom вюпорта
                end: '150px end',
                // markers: true,
@@ -129,13 +131,13 @@ export const Hero = () => {
             },
          });
          gsap.fromTo(
-            '[text="bottom"]',
+            self.selector('[text="bottom"]'),
             { opacity: 0, x: 150 },
             {
                opacity: 1,
                x: 0,
                scrollTrigger: {
-                  trigger: '[text="bottom"]',
+                  trigger: self.selector('[text="bottom"]'),
                   start: 'top bottom', //top элемента bottom вюпорта
                   end: 'bottom bottom',
                   // markers: true,
@@ -182,7 +184,7 @@ export const Hero = () => {
          />
          <img
             src={bigPlate}
-            alt="big plate"
+            alt="bigPlate"
          />
          <img
             src={rosemary}

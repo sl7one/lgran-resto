@@ -32,6 +32,7 @@ const gsapAnimation = (el) =>
             trigger: el,
             start: 'top 87%', //top элемента bottom вюпорта
             end: '100px center',
+            // markers: true,
             scrub: 2,
          },
       }
@@ -115,31 +116,33 @@ export const Book = () => {
    useEffect(() => {
       const ctx = gsap.context((self) => {
          //scroll-trigger
-         gsapAnimation(self.selector("[title='title']"));
-         gsapAnimation(self.selector('[title="book"]'));
-         gsapAnimation(self.selector('[title="input-top-left"]'));
-         gsapAnimation(self.selector('[title="input-bottom-left"]'));
-         gsapAnimation(self.selector('[title="input-top-right"]'));
-         gsapAnimation(self.selector('[title="input-bottom-right"]'));
-         gsapAnimation(self.selector('[type="submit"]'));
+         setTimeout(() => {
+            gsapAnimation(self.selector("[title='title']"));
+            gsapAnimation(self.selector('[title="book"]'));
+            gsapAnimation(self.selector('[title="input-top-left"]'));
+            gsapAnimation(self.selector('[title="input-bottom-left"]'));
+            gsapAnimation(self.selector('[title="input-top-right"]'));
+            gsapAnimation(self.selector('[title="input-bottom-right"]'));
+            gsapAnimation(self.selector('[type="submit"]'));
 
-         gsap.fromTo(
-            self.selector('[alt="book img"]'),
-            { opacity: 0, filter: `blur(30px) grayscale(1)`, scale: 1.4, y: 100 },
-            {
-               opacity: 1,
-               filter: `blur(0px) grayscale(0)`,
-               scale: 0.8,
-               y: 0,
-               scrollTrigger: {
-                  trigger: self.selector('[alt="book img"]'),
-                  start: 'top center', //top элемента bottom вюпорта
-                  end: '75% center',
-                  // markers: true,
-                  scrub: 2,
-               },
-            }
-         );
+            gsap.fromTo(
+               self.selector('[alt="book img"]'),
+               { opacity: 0, filter: `blur(30px) grayscale(1)`, scale: 1.4, y: 100 },
+               {
+                  opacity: 1,
+                  filter: `blur(0px) grayscale(0)`,
+                  scale: 0.8,
+                  y: 0,
+                  scrollTrigger: {
+                     trigger: self.selector('[alt="book img"]'),
+                     start: 'top center', //top элемента bottom вюпорта
+                     end: '75% center',
+                     // markers: true,
+                     scrub: 2,
+                  },
+               }
+            );
+         }, 500);
       }, container);
       return () => ctx.revert();
    }, []);

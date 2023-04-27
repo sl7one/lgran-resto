@@ -9,15 +9,15 @@ export const About = () => {
    const container = useRef(null);
 
    useEffect(() => {
-      const ctx = gsap.context(() => {
+      const ctx = gsap.context((self) => {
          //scroll-trigger
          gsap.fromTo(
-            '[text="about"]',
+            self.selector('[text="about"]'),
             { y: -250 },
             {
                y: 0,
                scrollTrigger: {
-                  trigger: '[text="about"]',
+                  trigger: self.selector('[text="about"]'),
                   start: 'top bottom', //top элемента bottom вюпорта
                   // markers: true,
                   scrub: 2,
@@ -25,41 +25,45 @@ export const About = () => {
             }
          );
          gsap.fromTo(
-            '[text="visit"]',
+            self.selector('[text="visit"]'),
             { y: -250 },
             {
                y: 0,
                scrollTrigger: {
-                  trigger: '[text="visit"]',
+                  trigger: self.selector('[text="visit"]'),
                   start: 'top bottom', //top элемента bottom вюпорта
                   // markers: true,
                   scrub: 2,
                },
             }
          );
-         gsap.fromTo(
-            '[alt="plate with waffles"]',
-            { y: -150, filter: 'blur(10px)  grayscale(1)' },
-            {
-               y: 0,
-               filter: 'blur(0px) grayscale(0)',
 
-               scrollTrigger: {
-                  trigger: '[alt="plate with waffles"]',
-                  start: 'top center', //top элемента bottom вюпорта
-                  // markers: true,
-                  scrub: 2,
-               },
-            }
-         );
+         setTimeout(() => {
+            gsap.fromTo(
+               self.selector('[alt="plateWithWaffles"]'),
+               { y: -150, filter: 'blur(10px)  grayscale(1)' },
+               {
+                  y: 0,
+                  filter: 'blur(0px) grayscale(0)',
+                  scrollTrigger: {
+                     trigger: self.selector('[alt="plateWithWaffles"]'),
+                     start: 'top center', //top элемента bottom вюпорта
+                     end: 'bottom bottom',
+                     // markers: true,
+                     scrub: 2,
+                  },
+               }
+            );
+         }, 500);
+
          gsap.fromTo(
-            "[title='title']",
+            self.selector("[title='title']"),
             { opacity: 0, y: -100 },
             {
                opacity: 1,
                y: 0,
                scrollTrigger: {
-                  trigger: "[title='title']",
+                  trigger: self.selector("[title='title']"),
                   start: 'top center', //top элемента bottom вюпорта
                   end: '300px center',
                   // markers: true,
@@ -90,7 +94,7 @@ export const About = () => {
          </p>
          <img
             src={plate}
-            alt="plate with waffles"
+            alt="plateWithWaffles"
          />
       </AboutBox>
    );
