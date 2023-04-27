@@ -5,10 +5,35 @@ import i from '../../assets/img/socLinks/i.png';
 import p from '../../assets/img/socLinks/p.png';
 import t from '../../assets/img/socLinks/t.png';
 import { mouseEnter, mouseLeave } from '../../gsap/utils';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 const soc = [f, i, p, t];
 
 export const Footer = () => {
+   const container = useRef(null);
+
+   useEffect(() => {
+      const ctx = gsap.context((self) => {
+         //scroll-trigger
+         gsap.fromTo(
+            '[alt="logo"]',
+            { scale: 1.5 },
+            {
+               scale: 1,
+               scrollTrigger: {
+                  trigger: '[alt="logo"]',
+                  start: 'top center', //top элемента bottom вюпорта
+                  end: 'bottom +=600',
+                  markers: true,
+                  scrub: 2,
+               },
+            }
+         );
+      }, container);
+      return () => ctx.revert();
+   }, []);
+
    const onMouseEnter = ({ currentTarget }) => {
       mouseEnter(currentTarget);
    };
@@ -18,10 +43,10 @@ export const Footer = () => {
    };
 
    return (
-      <FooterBox>
+      <FooterBox ref={container}>
          <img
             src={logo}
-            alt="лого"
+            alt="logo"
          />
          <nav>
             <p

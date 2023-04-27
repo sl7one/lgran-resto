@@ -348,6 +348,7 @@ export const EnjoyBox = styled.div`
    padding: 210px 0 210px 110px;
 
    position: relative;
+   overflow: hidden;
 
    h2 {
       font-size: 35px;

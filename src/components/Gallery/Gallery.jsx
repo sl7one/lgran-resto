@@ -9,22 +9,85 @@ import photo6 from '../../assets/img/gallery/photo6.png';
 import photo7 from '../../assets/img/gallery/photo7.png';
 import { GalleryBox } from '../../styles/styled';
 import { SectionTitle } from '../SictionTitle/SectionTitle';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { mouseEnter, mouseLeave } from 'gsap/utils';
 
 const images = [
-   { src: photo1, width: 3, height: 3 },
-   { src: photo2, width: 2, height: 3 },
-   { src: photo3, width: 3, height: 2 },
-   { src: photo4, width: 3, height: 2 },
-   { src: photo5, width: 3, height: 3 },
-   { src: photo7, width: 2, height: 2 },
-   { src: photo6, width: 3, height: 2 },
+   { src: photo1, width: 3, height: 3, alt: 'photo1' },
+   { src: photo2, width: 2, height: 3, alt: 'photo2' },
+   { src: photo3, width: 3, height: 2, alt: 'photo3' },
+   { src: photo4, width: 3, height: 2, alt: 'photo4' },
+   { src: photo5, width: 3, height: 3, alt: 'photo5' },
+   { src: photo7, width: 2, height: 2, alt: 'photo7' },
+   { src: photo6, width: 3, height: 2, alt: 'photo6' },
 ];
 
 export const GalleryComponent = () => {
+   const container = useRef(null);
+   const titleRef = useRef(null);
+
+   useEffect(() => {
+      const parent = document.querySelector(`[title="gallery"]`);
+      const ctx = gsap.context(() => {
+         setTimeout(() => {
+            const gallery = parent.querySelectorAll('img');
+
+            [...gallery].forEach((el) => {
+               el.addEventListener('mouseenter', ({ currentTarget }) =>
+                  mouseEnter(currentTarget)
+               );
+               el.addEventListener('mouseleave', ({ currentTarget }) =>
+                  mouseLeave(currentTarget)
+               );
+            });
+            gsap.fromTo(
+               gallery,
+               { y: 'random(-50,50,10, true)', x: 'random(-50,50,10, true)' },
+               {
+                  y: 0,
+                  x: 0,
+                  scrollTrigger: {
+                     trigger: container.current,
+                     start: 'top 65%', //top элемента bottom вюпорта
+                     end: 'bottom bottom',
+                     // markers: true,
+                     scrub: 2,
+                  },
+                  stagger: 0.1,
+               }
+            );
+         }, 100);
+
+         gsap.fromTo(
+            titleRef.current,
+            { opacity: 0, y: -100 },
+            {
+               opacity: 1,
+               y: 0,
+               scrollTrigger: {
+                  trigger: titleRef.current,
+                  start: 'top center', //top элемента bottom вюпорта
+                  end: '300px center',
+                  // markers: true,
+                  scrub: 2,
+               },
+            }
+         );
+      }, container);
+      return () => ctx.revert();
+   }, []);
+
    return (
       <GalleryBox>
-         <SectionTitle title="gallery" />
-         <div title="gallery">
+         <div ref={titleRef}>
+            <SectionTitle title="gallery" />
+         </div>
+
+         <div
+            title="gallery"
+            ref={container}
+         >
             <Gallery
                photos={images}
                direction={'column'}

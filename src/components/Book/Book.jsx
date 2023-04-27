@@ -7,6 +7,8 @@ import bookImg from '../../assets/img/book/book.png';
 import Select from 'react-select';
 import { CustomDropDownIndicator } from '../CustomDropDownIndicator/CustomDropDownIndicator';
 import { mouseEnter, mouseLeave } from '../../gsap/utils';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 const options = [
    { value: 2, label: '2 Persons' },
@@ -19,8 +21,25 @@ const optionsTime = [
    { value: 4, label: '11:00 am' },
 ];
 
+const gsapAnimation = (el) =>
+   gsap.fromTo(
+      el,
+      { opacity: 0, size: 1.25 },
+      {
+         opacity: 1,
+         size: 1,
+         scrollTrigger: {
+            trigger: el,
+            start: 'top 87%', //top элемента bottom вюпорта
+            end: '100px center',
+            scrub: 2,
+         },
+      }
+   );
+
 export const Book = () => {
    const theme = useTheme();
+   const container = useRef(null);
 
    const styles = {
       container: (baseStyles) => ({
@@ -93,6 +112,38 @@ export const Book = () => {
       }),
    };
 
+   useEffect(() => {
+      const ctx = gsap.context((self) => {
+         //scroll-trigger
+         gsapAnimation(self.selector("[title='title']"));
+         gsapAnimation(self.selector('[title="book"]'));
+         gsapAnimation(self.selector('[title="input-top-left"]'));
+         gsapAnimation(self.selector('[title="input-bottom-left"]'));
+         gsapAnimation(self.selector('[title="input-top-right"]'));
+         gsapAnimation(self.selector('[title="input-bottom-right"]'));
+         gsapAnimation(self.selector('[type="submit"]'));
+
+         gsap.fromTo(
+            self.selector('[alt="book img"]'),
+            { opacity: 0, filter: `blur(30px) grayscale(1)`, scale: 1.4, y: 100 },
+            {
+               opacity: 1,
+               filter: `blur(0px) grayscale(0)`,
+               scale: 0.8,
+               y: 0,
+               scrollTrigger: {
+                  trigger: self.selector('[alt="book img"]'),
+                  start: 'top center', //top элемента bottom вюпорта
+                  end: '75% center',
+                  // markers: true,
+                  scrub: 2,
+               },
+            }
+         );
+      }, container);
+      return () => ctx.revert();
+   }, []);
+
    const onMouseEnter = ({ currentTarget }) => {
       mouseEnter(currentTarget);
    };
@@ -100,13 +151,16 @@ export const Book = () => {
    const onMouseLeave = ({ currentTarget }) => {
       mouseLeave(currentTarget);
    };
+
    return (
-      <BookBox>
-         <SectionTitle title="book now" />
-         <h3>Book Your Table Now And Have A Great Meal !</h3>
+      <BookBox ref={container}>
+         <div title="title">
+            <SectionTitle title="book now" />
+         </div>
+         <h3 title="book">Book Your Table Now And Have A Great Meal !</h3>
          <form>
             <div id="left-block">
-               <div>
+               <div title="input-top-left">
                   <label htmlFor="name">Your full name ?</label>
                   <input
                      type="text"
@@ -114,7 +168,7 @@ export const Book = () => {
                      placeholder="Write your name here..."
                   />
                </div>
-               <div>
+               <div title="input-bottom-left">
                   <label htmlFor="persons">How many people ?</label>
                   <Select
                      inputId="persons"
@@ -126,7 +180,7 @@ export const Book = () => {
                </div>
             </div>
             <div id="right-block">
-               <div>
+               <div title="input-top-right">
                   <label htmlFor="email">Your email address ?</label>
                   <input
                      type="text"
@@ -134,7 +188,7 @@ export const Book = () => {
                      placeholder="Write your email here..."
                   />
                </div>
-               <div>
+               <div title="input-bottom-right">
                   <label htmlFor="time">What time ?</label>
                   <Select
                      inputId="time"
