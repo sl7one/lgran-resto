@@ -42,7 +42,7 @@ export const Enjoy = () => {
                   },
                }
             );
-         }, 500);
+         }, 1000);
       }, container);
       return () => ctx.revert();
    }, []);
