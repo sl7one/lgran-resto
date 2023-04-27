@@ -25,7 +25,7 @@ export const Footer = () => {
                   trigger: '[alt="logo"]',
                   start: 'top center', //top элемента bottom вюпорта
                   end: 'bottom +=600',
-                  markers: true,
+                  // markers: true,
                   scrub: 2,
                },
             }

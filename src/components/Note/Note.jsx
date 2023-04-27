@@ -58,11 +58,12 @@ export const Note = () => {
          );
          gsap.fromTo(
             self.selector('[alt="bg"]'),
-            { rotate: 360, x: '-50%', y: 0, filter: 'hue-rotate(0deg)' },
+            { rotate: 360, x: '-80%', y: 0, filter: 'hue-rotate(0deg)' },
             {
                rotate: 0,
                x: '50%',
-               y: '20%',
+               y: '10%',
+               scale: 3,
                filter: 'hue-rotate(360deg)',
 
                scrollTrigger: {
