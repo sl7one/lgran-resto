@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/lgran-resto/static/css/main.5ce6cd48.css",
+    "main.js": "/lgran-resto/static/js/main.f30ed44d.js",
+    "static/media/bgBlackTexture.png": "/lgran-resto/static/media/bgBlackTexture.3359f780682ab40f555c.png",
+    "static/media/book.png": "/lgran-resto/static/media/book.cb3eb2a14a1694facd25.png",
+    "static/media/bgGrayTexture.png": "/lgran-resto/static/media/bgGrayTexture.3ee33bbf66265de132d1.png",
+    "static/media/about.png": "/lgran-resto/static/media/about.bdbce4606421e17e52c3.png",
+    "static/media/foodQuality.png": "/lgran-resto/static/media/foodQuality.d0950fc6fec4d6a7ef40.png",
+    "static/media/bigPlate.png": "/lgran-resto/static/media/bigPlate.93b6921a127887057bc5.png",
+    "static/media/photo7.png": "/lgran-resto/static/media/photo7.906eccd3e301f352f337.png",
+    "static/media/enjoy.png": "/lgran-resto/static/media/enjoy.8da359980039fecd5a16.png",
+    "static/media/quoteBg.png": "/lgran-resto/static/media/quoteBg.469c0b395c0df1ae5de7.png",
+    "static/media/smallPlate.png": "/lgran-resto/static/media/smallPlate.a1da3cd0896d1619ae70.png",
+    "static/media/photo6.png": "/lgran-resto/static/media/photo6.08d667bb5897a9b9e061.png",
+    "static/media/photo1.png": "/lgran-resto/static/media/photo1.3510403256ca8c1cea03.png",
+    "static/media/photo5.png": "/lgran-resto/static/media/photo5.fe9f4589ff08b6d651b4.png",
+    "static/media/photo2.png": "/lgran-resto/static/media/photo2.784f819bb7c2d4d3a76b.png",
+    "static/media/photo4.png": "/lgran-resto/static/media/photo4.183348da44359cf30201.png",
+    "static/media/photo3.png": "/lgran-resto/static/media/photo3.64523c0f074ef4a3b16b.png",
+    "static/media/currant.png": "/lgran-resto/static/media/currant.ce74c14c44f04f0c7fcf.png",
+    "static/media/rosemary.png": "/lgran-resto/static/media/rosemary.48d5d3f7ae2ae93ae1c6.png",
+    "index.html": "/lgran-resto/index.html",
+    "main.5ce6cd48.css.map": "/lgran-resto/static/css/main.5ce6cd48.css.map",
+    "main.f30ed44d.js.map": "/lgran-resto/static/js/main.f30ed44d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ce6cd48.css",
+    "static/js/main.f30ed44d.js"
+  ]
+}
