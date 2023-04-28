@@ -27,10 +27,9 @@ export const Enjoy = () => {
             );
             gsap.fromTo(
                self.selector('[alt="enjoy"]'),
-               { x: '-100%', opacity: 0, rotate: 180, y: 0 },
+               { x: '-100%', opacity: 0, rotate: 180 },
                {
                   x: 0,
-                  y: 0,
                   opacity: 1,
                   rotate: 0,
                   scrollTrigger: {
