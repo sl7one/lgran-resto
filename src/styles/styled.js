@@ -377,9 +377,8 @@ export const EnjoyBox = styled.div`
    }
    img {
       position: absolute;
-      top: 50%;
+      top: 53%;
       right: 5%;
-      transform: translateY(-50%);
    }
 `;
 export const FooterBox = styled.div`
