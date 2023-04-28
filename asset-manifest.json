@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lgran-resto/static/css/main.5ce6cd48.css",
-    "main.js": "/lgran-resto/static/js/main.da4eb02f.js",
+    "main.js": "/lgran-resto/static/js/main.b4701903.js",
     "static/media/bgBlackTexture.png": "/lgran-resto/static/media/bgBlackTexture.3359f780682ab40f555c.png",
     "static/media/book.png": "/lgran-resto/static/media/book.cb3eb2a14a1694facd25.png",
     "static/media/bgGrayTexture.png": "/lgran-resto/static/media/bgGrayTexture.3ee33bbf66265de132d1.png",
@@ -22,10 +22,10 @@
     "static/media/rosemary.png": "/lgran-resto/static/media/rosemary.48d5d3f7ae2ae93ae1c6.png",
     "index.html": "/lgran-resto/index.html",
     "main.5ce6cd48.css.map": "/lgran-resto/static/css/main.5ce6cd48.css.map",
-    "main.da4eb02f.js.map": "/lgran-resto/static/js/main.da4eb02f.js.map"
+    "main.b4701903.js.map": "/lgran-resto/static/js/main.b4701903.js.map"
   },
   "entrypoints": [
     "static/css/main.5ce6cd48.css",
-    "static/js/main.da4eb02f.js"
+    "static/js/main.b4701903.js"
   ]
 }
