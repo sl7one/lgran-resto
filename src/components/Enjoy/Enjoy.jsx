@@ -27,7 +27,7 @@ export const Enjoy = () => {
             );
             gsap.fromTo(
                self.selector('[alt="enjoy"]'),
-               { x: '-150%', opacity: 0, rotate: 180, y: 0 },
+               { x: '-100%', opacity: 0, rotate: 180, y: 0 },
                {
                   x: 0,
                   y: 0,
@@ -42,7 +42,7 @@ export const Enjoy = () => {
                   },
                }
             );
-         }, 1000);
+         }, 500);
       }, container);
       return () => ctx.revert();
    }, []);

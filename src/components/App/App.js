@@ -21,7 +21,9 @@ export const App = () => {
 
       window.addEventListener('load', siteLoading);
       return () => window.removeEventListener('load', siteLoading);
-   }, []);
+   }, [isLoaded]);
+
+   console.log(isLoaded);
 
    return (
       <>
