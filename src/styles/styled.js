@@ -377,7 +377,7 @@ export const EnjoyBox = styled.div`
    }
    img {
       position: absolute;
-      top: 53%;
+      top: 125px;
       right: 5%;
    }
 `;
